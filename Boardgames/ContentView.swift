@@ -14,9 +14,11 @@ struct ContentView: View {
     @EnvironmentObject var userData: UserData
 
     var body: some View {
-        
-        Text("Hello, World!")
-        
+        NavigationView{
+            NavigationLink(destination: BoardgameDetail(boardgame: userData.collection[0])) {
+                Text("See boardgame 0")
+            }
+        }
     }
 }
 

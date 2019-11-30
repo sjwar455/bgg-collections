@@ -5,6 +5,8 @@
 //  Created by Sam Wareing on 11/25/19.
 //  Copyright © 2019 Sam Wareing. All rights reserved.
 //
+//  Helper functions and objects 
+//
 
 import Foundation
 import SwiftUI
