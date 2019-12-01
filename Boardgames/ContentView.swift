@@ -15,7 +15,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView{
-            NavigationLink(destination: BoardgameDetail(boardgame: userData.collection[0])) {
+            NavigationLink(destination: BoardgameDetail(boardgame: userData.collection[3])) {
                 Text("See boardgame 0")
             }
         }

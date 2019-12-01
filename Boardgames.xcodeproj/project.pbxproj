@@ -18,6 +18,7 @@
 		87BEB213238B39F0009A59EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BEB211238B39F0009A59EE /* LaunchScreen.storyboard */; };
 		87BEB21D238B3D58009A59EE /* boardgameData.json in Resources */ = {isa = PBXBuildFile; fileRef = 87BEB21C238B3D58009A59EE /* boardgameData.json */; };
 		87C6E40723931E510086AFC5 /* BoardgameDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C6E40623931E510086AFC5 /* BoardgameDetail.swift */; };
+		87C6E40D23932DCF0086AFC5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C6E40C23932DCF0086AFC5 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		87BEB214238B39F0009A59EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BEB21C238B3D58009A59EE /* boardgameData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = boardgameData.json; sourceTree = "<group>"; };
 		87C6E40623931E510086AFC5 /* BoardgameDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameDetail.swift; sourceTree = "<group>"; };
+		87C6E40C23932DCF0086AFC5 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				87BEB206238B39EC009A59EE /* AppDelegate.swift */,
 				87BEB208238B39EC009A59EE /* SceneDelegate.swift */,
 				87BEB20A238B39EC009A59EE /* ContentView.swift */,
+				87C6E40C23932DCF0086AFC5 /* ImageView.swift */,
 				87BEB20C238B39F0009A59EE /* Assets.xcassets */,
 				87BEB211238B39F0009A59EE /* LaunchScreen.storyboard */,
 				87BEB214238B39F0009A59EE /* Info.plist */,
@@ -191,6 +194,7 @@
 				87862618238DF09D00D7ADDF /* Boardgame.swift in Sources */,
 				87BEB207238B39EC009A59EE /* AppDelegate.swift in Sources */,
 				87BEB209238B39EC009A59EE /* SceneDelegate.swift in Sources */,
+				87C6E40D23932DCF0086AFC5 /* ImageView.swift in Sources */,
 				87C6E40723931E510086AFC5 /* BoardgameDetail.swift in Sources */,
 				87BEB20B238B39EC009A59EE /* ContentView.swift in Sources */,
 			);

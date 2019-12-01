@@ -12,18 +12,47 @@ struct BoardgameDetail: View {
     var boardgame: Boardgame
     
     var body: some View {
-        VStack {
-            Text(verbatim: boardgame.title)
-                .font(.title)
-            Text(boardgame.minPlayers + "-" + boardgame.maxPlayers)
-                .font(.subheadline)
-            Text(boardgame.minPlayTime + "-" + boardgame.maxPlayTime + " mins")
-                .font(.subheadline)
-            Text(boardgame.minAge + "+")
-                .font(.subheadline)
-            
+        
+          VStack {
+        
+                  
+                  ImageView(withURL: boardgame.imageURL)
+              
+                      
+                  Text(verbatim: boardgame.title)
+                          .font(.largeTitle)
+                      
+                  HStack {
+                      Text(boardgame.minPlayers + "-" + boardgame.maxPlayers + " players")
+                          .font(.subheadline)
+                      Text(boardgame.minPlayTime + "-" + boardgame.maxPlayTime + " mins")
+                          .font(.subheadline)
+                      Text(boardgame.minAge + "+")
+                          .font(.subheadline)
+                          
+                      }
+                      
+              
+                  
+        
+        VStack(alignment: .leading) {
+                  Text("Desription")
+                      .font(.title)
+              
+                  Text(boardgame.description)
+                  
+              
+                  Text("Categories")
+                      .font(.title)
+             
+                  Text("Mechanics")
+                      .font(.title)
+          
+              }
         }
+        
+
+            
     }
+
 }
-
-
