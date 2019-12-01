@@ -11,8 +11,10 @@ import SwiftUI
 struct BoardgameDetail: View {
     var boardgame: Boardgame
     
+    @State private var showDescription: Bool = false
+    
     var body: some View {
-        
+        ScrollView {
           VStack {
         
                   
@@ -26,7 +28,7 @@ struct BoardgameDetail: View {
                       Text(boardgame.minPlayers + "-" + boardgame.maxPlayers + " players")
                           .font(.subheadline)
                       
-                      Text(boardgame.minPlayTime + "-" + boardgame.maxPlayTime + " mins")
+                      Text(boardgame.playTimeRange + " mins")
                           .font(.subheadline)
                    
                       Text("ages " + boardgame.minAge + "+")
@@ -36,20 +38,31 @@ struct BoardgameDetail: View {
                   .padding(.bottom, 25)
                       
               
-                  
+
         
             // boardgame info
             VStack(alignment: .leading) {
+        
                 
-                  Text("Desription")
-                      .font(.headline)
-                        
-                  Text(boardgame.description)
-                    .padding(.bottom, 25)
-                  
+                Toggle(isOn: $showDescription){
+                    Text("Description")
+                        .padding(.bottom)
+                        .font(.headline)
+                    
+                }
                
+                if showDescription {
+                    Text(boardgame.description)
+                        .padding(.bottom, 25)
+                }
                 
-                  // boardgame mechanics & categories
+                    
+                
+               
+                    
+                    
+                
+                // boardgame mechanics & categories
                   HStack(alignment: .top) {
                     
                     // boardgame categories
@@ -63,7 +76,7 @@ struct BoardgameDetail: View {
                                         .font(.body)
                                 } // end ForEach categories
                     } // end VStack categories
-                        .padding(.trailing, 25)
+                        .padding(.trailing, 50)
                     
             
                 
@@ -77,13 +90,17 @@ struct BoardgameDetail: View {
                                     .font(.body)
                             } // end ForEach mechanics
                     } // end VStack mechanics
+ 
                     
                 } // end HStack of boardgame categories and mechanics
+ 
                 
                 } // end VStack info
-                .offset(x: -50)
-            
+                .offset(x: 0)
+                .padding(.top, 25)
+ 
                } // end main VStack
+        } // end of ScrollView 
             
             
     } // end body

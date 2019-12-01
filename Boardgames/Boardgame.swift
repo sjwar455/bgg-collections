@@ -10,27 +10,29 @@ import SwiftUI
 
 struct Boardgame: Hashable, Codable, Identifiable {
     var id: Int = -1
-    var title: String = "not set"
-    var description: String = "not set"
-    var minPlayers: String = "not set"
-    var maxPlayers: String = "not set"
-    var minPlayTime: String = "not set"
-    var maxPlayTime: String = "not set"
-    var minAge: String = "not set"
+    var title: String = ""
+    var description: String = ""
+    var minPlayers: String = ""
+    var maxPlayers: String = ""
+    var minPlayTime: String = ""
+    var maxPlayTime: String = ""
+    var playTimeRange: String = ""
+    var minAge: String = ""
     var categories: [String] = []
     var mechanics: [String] = []
-    var imageURL: String = "not set"
+    var imageURL: String = ""
     
     func printData() {
         print("++++++++++++++++++++++++++++++++++++++++++++++++++")
         print("id: " + String(self.id))
         print("title: " + self.title)
         print("description: " + self.description)
-        print("minPlayers: " + String(self.minPlayers))
-        print("maxPlayers: " + String(self.maxPlayers))
-        print("minPlayTime: " + String(self.minPlayTime))
-        print("maxPlayTime: " + String(self.maxPlayTime))
-        print("minAge: " + String(self.minAge))
+        print("minPlayers: " + self.minPlayers)
+        print("maxPlayers: " + self.maxPlayers)
+        print("minPlayTime: " + self.minPlayTime)
+        print("maxPlayTime: " + self.maxPlayTime)
+        print("playTimeRange: " + self.playTimeRange)
+        print("minAge: " + self.minAge)
         print("categories: ", self.categories)
         print("mechanics: ", self.mechanics)
         print("imageURL: " + self.imageURL)

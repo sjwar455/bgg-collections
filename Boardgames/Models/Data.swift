@@ -67,6 +67,13 @@ func getBoardgame(id: String) -> Boardgame {
        print("Parser error: ", parser.parserError, ", line: ", parser.lineNumber, ", column: ", parser.columnNumber);
     }
     
+    if bggXMLParser.boardgame.minPlayTime == bggXMLParser.boardgame.maxPlayTime {
+                bggXMLParser.boardgame.playTimeRange = bggXMLParser.boardgame.minPlayTime
+           }
+           else {
+                bggXMLParser.boardgame.playTimeRange = bggXMLParser.boardgame.minPlayTime + "-" + bggXMLParser.boardgame.maxPlayTime
+           }
+    
     return bggXMLParser.boardgame
     
 }
@@ -112,7 +119,7 @@ class BoardgameXMLParser : NSObject, XMLParserDelegate {
         }
         
     default:
-        print("-default case-")
+        print("deault bg element case")
     }
       level += 1
    }
@@ -128,11 +135,21 @@ class BoardgameXMLParser : NSObject, XMLParserDelegate {
       {
          print("Value: " + string);
          
-        if currentElement == "thumbnail"{
+        switch currentElement {
+        case "thumbnail":
             boardgame.imageURL = string
+            
+        case "description":
+            if string == "&" || string == "#10;" {
+                boardgame.description += "\n"
+            }
+            else {
+                boardgame.description += string.replacingOccurrences(of: "#10;", with: "")
+            }
+        default:
+            print("default bg description case")
         }
-         
-         
+    
       }
    }
 
@@ -200,4 +217,5 @@ class ImageLoader: ObservableObject {
         task.resume()
     }
 }
+
 
