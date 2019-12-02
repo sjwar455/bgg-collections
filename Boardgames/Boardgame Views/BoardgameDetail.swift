@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct BoardgameDetail: View {
+     @EnvironmentObject private var userData: UserData
     var boardgame: Boardgame
     
     @State private var showDescription: Bool = false
@@ -16,9 +17,8 @@ struct BoardgameDetail: View {
     var body: some View {
         ScrollView {
           VStack {
-        
                   
-                  ImageView(withURL: boardgame.imageURL)
+            ImageView(withURL: boardgame.thumbnailURL, width: 200, height: 200)
               
                       
                   Text(verbatim: boardgame.title)
@@ -37,8 +37,6 @@ struct BoardgameDetail: View {
                       }
                   .padding(.bottom, 25)
                       
-              
-
         
             // boardgame info
             VStack(alignment: .leading) {

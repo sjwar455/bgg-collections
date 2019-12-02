@@ -11,20 +11,24 @@
 import Foundation
 import SwiftUI
 import Combine
-import UIKit
 
-let rootURL = "https://boardgamegeek.com/xmlapi2/"
-let userid = "sjwar455"
+let boardgameCollection: [Boardgame] = getCollection(userid: "seismicHBDPT")
 
-let boardgameCollection: [Boardgame] = getCollection()
 
-func getCollection() -> [Boardgame] {
+func getCollection(userid: String) -> [Boardgame] {
+    print("========================================================")
+    print("parsing collection for user " + userid)
+    print("========================================================")
     var collection: [Boardgame] = []
     
-    let urlString = rootURL + "collection?username=" + userid + "&excludesubtype=boardgameexpansion"
+    
+    let urlString = collectionRootURL.replacingOccurrences(of: collection_userid, with: userid)
     let url = URL(string: urlString)!
     let parser = XMLParser(contentsOf: url)!
+    
+
     let collectionParser = CollectionXMLParser()
+    
     parser.delegate = collectionParser
     
     if parser.parse()
@@ -34,163 +38,79 @@ func getCollection() -> [Boardgame] {
     else
     {
        print("Parser error: ", parser.parserError, ", line: ", parser.lineNumber, ", column: ", parser.columnNumber);
-    }
-    
-    print(collectionParser.boardgameIDs)
-    
-    for boardgameID in collectionParser.boardgameIDs {
-        collection.append(getBoardgame(id: boardgameID))
         
     }
     
-    for boardgame in collection {
-        boardgame.printData()
+    print("========================================================")
+    print("boardgame ids:")
+    print("========================================================")
+    
+        print(collectionParser.boardgameIDs)
+    
+    for boardgameID in collectionParser.boardgameIDs {
+        collection.append(getBoardgame(id: boardgameID))
     }
+     
+    
+      print("========================================================")
+      print("boardgame collection")
+      print("========================================================")
+    
+        for boardgame in collection {
+            boardgame.printData()
+        }
+    
+      print("========================================================")
+      print("end of building boardgame collection")
+      print("========================================================")
     
     return collection
 }
 
 func getBoardgame(id: String) -> Boardgame {
     
-    let urlString = rootURL + "thing?id=" + id
+    print("========================================================")
+    print("parsing boardgame data for boardgame with bgg id: " + id)
+    print("========================================================")
+    
+    let urlString = boardgameRootURL.replacingOccurrences(of: boardgame_id, with: id)
     let url = URL(string: urlString)!
+    
     let parser = XMLParser(contentsOf: url)!
+    
     let bggXMLParser = BoardgameXMLParser()
     parser.delegate = bggXMLParser
     
     if parser.parse()
     {
-       print("Parsing OK")
+       print("Parsing OK for bgg with id " + id)
     }
     else
     {
-       print("Parser error: ", parser.parserError, ", line: ", parser.lineNumber, ", column: ", parser.columnNumber);
+        let errorMessage = parser.parserError!.localizedDescription
+        
+        print("Parser error: " + errorMessage)
+        print("while parsing bgg id " + id)
+        
+        if errorMessage.contains(retryError) {
+            print("retrying parsing for boardgame wth bgg id " + id + "...")
+            
+            return getBoardgame(id: id)
+        }
+        
+    
     }
     
+    // TO DO: move these as set methods into boardgame struct
     if bggXMLParser.boardgame.minPlayTime == bggXMLParser.boardgame.maxPlayTime {
                 bggXMLParser.boardgame.playTimeRange = bggXMLParser.boardgame.minPlayTime
            }
-           else {
+    else {
                 bggXMLParser.boardgame.playTimeRange = bggXMLParser.boardgame.minPlayTime + "-" + bggXMLParser.boardgame.maxPlayTime
            }
-    
+        
     return bggXMLParser.boardgame
     
-}
-
-class BoardgameXMLParser : NSObject, XMLParserDelegate {
-    var level: Int = 0
-    var boardgame: Boardgame = Boardgame()
-    var currentElement: String = ""
-    
-   func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-    
-     print("startElement: ", elementName, ", Level: ", level);
-    
-     currentElement = elementName
-    
-    // build boardgame struct from xml data
-    switch elementName {
-    case "name":
-        if attributeDict["type"] == "primary" {
-            boardgame.title = attributeDict["value"]!
-        }
-        
-    case "minplayers":
-        boardgame.minPlayers = attributeDict["value"]!
-        
-    case "maxplayers":
-        boardgame.maxPlayers = attributeDict["value"]!
-    
-    case "minplaytime":
-        boardgame.minPlayTime = attributeDict["value"]!
-        
-    case "maxplaytime":
-        boardgame.maxPlayTime = attributeDict["value"]!
-    
-    case "minage":
-        boardgame.minAge = attributeDict["value"]!
-    case "link":
-        if attributeDict["type"] == "boardgamecategory" {
-            boardgame.categories.append(attributeDict["value"]!)
-        }
-        else if attributeDict["type"] == "boardgamemechanic" {
-            boardgame.mechanics.append(attributeDict["value"]!)
-        }
-        
-    default:
-        print("deault bg element case")
-    }
-      level += 1
-   }
-    
-   func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-      level -= 1
-      print("endElement: ", elementName, ", Level: ", level);
-      }
-    
-   func parser(_ parser: XMLParser, foundCharacters string: String) {
-      let trimmedString = string.trimmingCharacters(in: .whitespacesAndNewlines)
-      if trimmedString.count > 0
-      {
-         print("Value: " + string);
-         
-        switch currentElement {
-        case "thumbnail":
-            boardgame.imageURL = string
-            
-        case "description":
-            if string == "&" || string == "#10;" {
-                boardgame.description += "\n"
-            }
-            else {
-                boardgame.description += string.replacingOccurrences(of: "#10;", with: "")
-            }
-        default:
-            print("default bg description case")
-        }
-    
-      }
-   }
-
-   func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-       print("failure error: ", parseError)
-   }
-}
-
-class CollectionXMLParser : NSObject, XMLParserDelegate {
-   var level: Int = 0
-   var boardgameIDs: [String] = []
-    
-   func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-      print("startElement: ", elementName, ", Level: ", level);
-      print(attributeDict)
-    
-    switch elementName {
-    case "item":
-        boardgameIDs.append(attributeDict["objectid"]!)
-    default:
-        print("default")
-    }
-      level += 1
-   }
-    
-   func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-      level -= 1
-      print("endElement: ", elementName, ", Level: ", level);
-      }
-    
-   func parser(_ parser: XMLParser, foundCharacters string: String) {
-      let trimmedString = string.trimmingCharacters(in: .whitespacesAndNewlines)
-      if trimmedString.count > 0
-      {
-         print("Value: " + string);
-      }
-   }
-
-   func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-       print("failure error: ", parseError)
-   }
 }
 
 class ImageLoader: ObservableObject {
@@ -199,11 +119,13 @@ class ImageLoader: ObservableObject {
     var data = Data() {
         didSet{
             didChange.send(data)
+            print("got image!!")
         }
     }
     
     init(urlString: String) {
         guard let url = URL(string: urlString) else {return}
+        print(url) 
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
