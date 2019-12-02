@@ -5,9 +5,13 @@ struct ImageView: View {
     
     @ObservedObject var imageLoader: ImageLoader
     @State var image: UIImage = UIImage()
+    var frameWidth: CGFloat
+    var frameHeight: CGFloat
     
-    init(withURL url: String) {
+    init(withURL url: String, width: CGFloat, height: CGFloat) {
         imageLoader = ImageLoader(urlString: url)
+        frameWidth = width
+        frameHeight = height
     }
 
     var body: some View {
@@ -15,7 +19,7 @@ struct ImageView: View {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width:200, height:200)
+                    .frame(width: frameWidth, height: frameHeight)
             }.onReceive(imageLoader.didChange) { data in
                 self.image = UIImage(data: data) ?? UIImage()
             }
