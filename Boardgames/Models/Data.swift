@@ -94,7 +94,7 @@ func getBoardgame(id: String) -> Boardgame {
         
         if errorMessage.contains(retryError) {
             print("retrying parsing for boardgame wth bgg id " + id + "...")
-            
+            usleep(2000)
             return getBoardgame(id: id)
         }
         

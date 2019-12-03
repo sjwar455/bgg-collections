@@ -23,7 +23,7 @@ struct Boardgame: Hashable, Codable, Identifiable {
     var mechanics: [String] = []
     var thumbnailURL: String = ""
     var imageURL: String = ""
-    
+
     func printData() {
         print("++++++++++++++++++++++++++++++++++++++++++++++++++")
         print("id: " + String(self.id))
