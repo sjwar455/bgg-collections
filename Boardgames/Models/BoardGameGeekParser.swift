@@ -114,7 +114,11 @@ class CollectionXMLParser : NSObject, XMLParserDelegate {
     
     switch elementName {
     case "item":
-        boardgameIDs.append(attributeDict["objectid"]!)
+        
+        if !boardgameIDs.contains(attributeDict["objectid"]!) {
+            boardgameIDs.append(attributeDict["objectid"]!)
+        }
+        
     default:
         print("default")
     }
