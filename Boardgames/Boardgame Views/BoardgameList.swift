@@ -11,9 +11,12 @@ import SwiftUI
 struct BoardgameList: View {
     @EnvironmentObject private var userData: UserData
     
+    
     var body: some View {
     
+    
         List {
+            
             ForEach(userData.collection, id: \.self ) { boardgame in
                 NavigationLink( destination: BoardgameDetail(boardgame: boardgame) ) {
                     BoardgameRow(boardgame: boardgame)
