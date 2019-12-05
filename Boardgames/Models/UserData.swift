@@ -10,4 +10,9 @@ import SwiftUI
 
 final class UserData: ObservableObject {
     @Published var collection = boardgameCollection
+    @Published var filter = Filter()
+    
+
 }
+
+

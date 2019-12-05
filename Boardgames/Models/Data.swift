@@ -113,6 +113,26 @@ func getBoardgame(id: String) -> Boardgame {
     
 }
 
+struct Filter {
+    var isOn: Bool = false
+    var numPlayers: Int = 5
+    var minAge: Int = 0
+    
+    func filterBoardgame(boardgame: Boardgame) -> Bool {
+
+        
+        if  self.numPlayers >= Int(boardgame.minPlayers)!
+            && self.numPlayers <= Int(boardgame.maxPlayers)!
+            && self.minAge <= Int(boardgame.minAge)! {
+            
+            return true
+            
+        }
+            
+        return false
+    }
+}
+
 class ImageLoader: ObservableObject {
     var didChange = PassthroughSubject<Data, Never>()
     
