@@ -12,9 +12,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-let boardgameCollection: [Boardgame] = getCollection(userid: "seismicHBDPT")
-
-
 func getCollection(userid: String) -> [Boardgame] {
     print("========================================================")
     print("parsing collection for user " + userid)
@@ -101,37 +98,13 @@ func getBoardgame(id: String) -> Boardgame {
     
     }
     
-    // TO DO: move these as set methods into boardgame struct
-    if bggXMLParser.boardgame.minPlayTime == bggXMLParser.boardgame.maxPlayTime {
-                bggXMLParser.boardgame.playTimeRange = bggXMLParser.boardgame.minPlayTime
-           }
-    else {
-                bggXMLParser.boardgame.playTimeRange = bggXMLParser.boardgame.minPlayTime + "-" + bggXMLParser.boardgame.maxPlayTime
-           }
-        
+    bggXMLParser.boardgame.setPlayTimeRange()
+    
     return bggXMLParser.boardgame
     
 }
 
-struct Filter {
-    var isOn: Bool = false
-    var numPlayers: Int = 5
-    var minAge: Int = 0
-    
-    func filterBoardgame(boardgame: Boardgame) -> Bool {
 
-        
-        if  self.numPlayers >= Int(boardgame.minPlayers)!
-            && self.numPlayers <= Int(boardgame.maxPlayers)!
-            && self.minAge <= Int(boardgame.minAge)! {
-            
-            return true
-            
-        }
-            
-        return false
-    }
-}
 
 class ImageLoader: ObservableObject {
     var didChange = PassthroughSubject<Data, Never>()

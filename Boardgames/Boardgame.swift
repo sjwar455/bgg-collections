@@ -10,7 +10,6 @@ import SwiftUI
 
 struct Boardgame: Hashable, Codable, Identifiable {
     var id: Int = -1
-    var bggid: String = ""
     var title: String = ""
     var description: String = ""
     var minPlayers: String = ""
@@ -23,12 +22,21 @@ struct Boardgame: Hashable, Codable, Identifiable {
     var mechanics: [String] = []
     var thumbnailURL: String = ""
     var imageURL: String = ""
+    
+    func setPlayTimeRange() {
+    
+        if self.minPlayTime == self.maxPlayTime {
+                 let playTimeRange = minPlayTime
+            }
+        else {
+                let playTimeRange = minPlayTime + "-" + maxPlayTime
+            }
 
+    }
     
     func printData() {
         print("++++++++++++++++++++++++++++++++++++++++++++++++++")
         print("id: " + String(self.id))
-        print("bggid: " + self.bggid)
         print("title: " + self.title)
         print("description: " + self.description)
         print("minPlayers: " + self.minPlayers)
@@ -44,4 +52,5 @@ struct Boardgame: Hashable, Codable, Identifiable {
         print("++++++++++++++++++++++++++++++++++++++++++++++++++")
         
     }
+    
 }
