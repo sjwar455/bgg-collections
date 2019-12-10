@@ -15,18 +15,18 @@ struct BoardgameList: View {
     var body: some View {
         List {
             
-            Toggle(isOn: $userData.filterCriteria.isOn){
+            Toggle(isOn: $userData.collection.filterCriteria.isOn){
                 Text("Filter")
             }
             
-            if self.userData.filterCriteria.isOn {
-                    FilterView() 
+            if self.userData.collection.filterCriteria.isOn {
+                    BoardgameListFilter()
             }
       
             
-            ForEach(userData.collection) { boardgame in
+            ForEach(userData.collection.boardgames) { boardgame in
         
-                if !self.userData.filterCriteria.isOn || self.userData.filterCriteria.filter(boardgame: boardgame)  {
+                if !self.userData.collection.filterCriteria.isOn || self.userData.collection.filterCriteria.filter(boardgame: boardgame)  {
                     NavigationLink( destination: BoardgameDetail(boardgame: boardgame) ) {
                         BoardgameRow(boardgame: boardgame)
                     }

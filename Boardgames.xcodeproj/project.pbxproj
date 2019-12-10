@@ -10,7 +10,10 @@
 		87862618238DF09D00D7ADDF /* Boardgame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87862617238DF09D00D7ADDF /* Boardgame.swift */; };
 		8786261A238DF4DA00D7ADDF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87862619238DF4DA00D7ADDF /* UserData.swift */; };
 		878712992399C6EF00620BC1 /* BoardgameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878712982399C6EF00620BC1 /* BoardgameFilter.swift */; };
-		879BDD052398812B0015C30F /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BDD042398812B0015C30F /* FilterView.swift */; };
+		8787129B2399E06600620BC1 /* BoardgameListFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8787129A2399E06500620BC1 /* BoardgameListFilter.swift */; };
+		87B5D428239EE74300DBA8CB /* MultiSelectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */; };
+		87B5D42A239EE79F00DBA8CB /* MultiSelectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */; };
+		87B5D42C239F3D4700DBA8CB /* BoardgameCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */; };
 		87BC1333238CE93D00896AD6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BC1332238CE93D00896AD6 /* Data.swift */; };
 		87BEB207238B39EC009A59EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEB206238B39EC009A59EE /* AppDelegate.swift */; };
 		87BEB209238B39EC009A59EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEB208238B39EC009A59EE /* SceneDelegate.swift */; };
@@ -29,7 +32,10 @@
 		87862617238DF09D00D7ADDF /* Boardgame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Boardgame.swift; path = ../Boardgame.swift; sourceTree = "<group>"; };
 		87862619238DF4DA00D7ADDF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		878712982399C6EF00620BC1 /* BoardgameFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameFilter.swift; sourceTree = "<group>"; };
-		879BDD042398812B0015C30F /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		8787129A2399E06500620BC1 /* BoardgameListFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameListFilter.swift; sourceTree = "<group>"; };
+		87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectRow.swift; sourceTree = "<group>"; };
+		87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectList.swift; sourceTree = "<group>"; };
+		87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameCollection.swift; sourceTree = "<group>"; };
 		87BC1332238CE93D00896AD6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		87BEB203238B39EC009A59EE /* Boardgames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boardgames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BEB206238B39EC009A59EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				87862619238DF4DA00D7ADDF /* UserData.swift */,
+				87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */,
 				87862617238DF09D00D7ADDF /* Boardgame.swift */,
 				878712982399C6EF00620BC1 /* BoardgameFilter.swift */,
 				87BC1332238CE93D00896AD6 /* Data.swift */,
@@ -113,6 +120,7 @@
 		87C6E40523931E2E0086AFC5 /* Boardgame Views */ = {
 			isa = PBXGroup;
 			children = (
+				8787129A2399E06500620BC1 /* BoardgameListFilter.swift */,
 				87C6E40623931E510086AFC5 /* BoardgameDetail.swift */,
 				87EEC2A72393A37C00D71B21 /* BoardgameRow.swift */,
 				87EEC2AB2393A4E500D71B21 /* BoardgameList.swift */,
@@ -124,7 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				87C6E40C23932DCF0086AFC5 /* ImageView.swift */,
-				879BDD042398812B0015C30F /* FilterView.swift */,
+				87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */,
+				87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -202,10 +211,13 @@
 			files = (
 				87BC1333238CE93D00896AD6 /* Data.swift in Sources */,
 				8786261A238DF4DA00D7ADDF /* UserData.swift in Sources */,
+				87B5D42C239F3D4700DBA8CB /* BoardgameCollection.swift in Sources */,
 				87EEC2A3239398E300D71B21 /* BoardGameGeekParser.swift in Sources */,
 				87862618238DF09D00D7ADDF /* Boardgame.swift in Sources */,
-				879BDD052398812B0015C30F /* FilterView.swift in Sources */,
+				87B5D428239EE74300DBA8CB /* MultiSelectRow.swift in Sources */,
 				87BEB207238B39EC009A59EE /* AppDelegate.swift in Sources */,
+				87B5D42A239EE79F00DBA8CB /* MultiSelectList.swift in Sources */,
+				8787129B2399E06600620BC1 /* BoardgameListFilter.swift in Sources */,
 				87BEB209238B39EC009A59EE /* SceneDelegate.swift in Sources */,
 				87C6E40D23932DCF0086AFC5 /* ImageView.swift in Sources */,
 				87C6E40723931E510086AFC5 /* BoardgameDetail.swift in Sources */,

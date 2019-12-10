@@ -9,14 +9,10 @@ import Combine
 import SwiftUI
 
 final class UserData: ObservableObject {
-    @Published var userid: String = ""
-    @Published var collection: [Boardgame] = []
-    @Published var filterCriteria: BoardgameFilter = BoardgameFilter()
+    @Published var collection: BoardgameCollection
     
     init(userid: String) {
-        self.userid = userid
-        self.collection = getCollection(userid: userid)
-        self.filterCriteria = BoardgameFilter()
+        self.collection = BoardgameCollection(userid: userid)
     }
 }
 
