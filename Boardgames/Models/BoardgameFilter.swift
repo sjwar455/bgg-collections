@@ -21,18 +21,13 @@ struct BoardgameFilter {
 
 // check if boardgame passes through filter i.e. meets filter criteria
     func filter(boardgame: Boardgame) -> Bool {
-        var result: Bool = false
-    
-        result = self.checkNumPlayers(minPlayers: Int(boardgame.minPlayers)!, maxPlayers: Int(boardgame.maxPlayers)!)
-        result = self.checkMinAge(minAge: Int(boardgame.minAge)!)
-        result = self.checkForCommonTraits(boardgameTraits: boardgame.categories, filterTraits: self.categories, mustContainAll: self.mustContainAllCategories)
-        result = self.checkForCommonTraits(boardgameTraits: boardgame.mechanics, filterTraits: self.mechanics, mustContainAll: self.mustContainAllMechanics)
-    
-        return result
+        return   self.checkNumPlayers(minPlayers: Int(boardgame.minPlayers)!, maxPlayers: Int(boardgame.maxPlayers)!)
+              && self.checkMinAge(minAge: Int(boardgame.minAge)!)
+              && self.checkForCommonTraits(boardgameTraits: boardgame.categories, filterTraits: self.categories, mustContainAll: self.mustContainAllCategories)
+              && self.checkForCommonTraits(boardgameTraits: boardgame.mechanics, filterTraits: self.mechanics, mustContainAll: self.mustContainAllMechanics)
     
     }
     
-
     func checkNumPlayers(minPlayers: Int, maxPlayers: Int) -> Bool {
         return minPlayers <= self.numPlayers && maxPlayers >= self.numPlayers
     }
