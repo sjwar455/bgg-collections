@@ -23,5 +23,4 @@ struct BoardgameCollection {
         self.filterCriteria = BoardgameFilter()
     }
     
-    
 }
