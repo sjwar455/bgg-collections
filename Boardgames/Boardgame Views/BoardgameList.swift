@@ -7,16 +7,29 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct BoardgameList: View {
     @EnvironmentObject private var userData: UserData
-    
+
     var body: some View {
-    
         List {
-            ForEach(userData.collection, id: \.self ) { boardgame in
-                NavigationLink( destination: BoardgameDetail(boardgame: boardgame) ) {
-                    BoardgameRow(boardgame: boardgame)
+            
+            Toggle(isOn: $userData.collection.filterCriteria.isOn){
+                Text("Filter")
+            }
+            
+            if self.userData.collection.filterCriteria.isOn {
+                    BoardgameListFilter()
+            }
+      
+            
+            ForEach(userData.collection.boardgames) { boardgame in
+        
+                if !self.userData.collection.filterCriteria.isOn || self.userData.collection.filterCriteria.filter(boardgame: boardgame)  {
+                    NavigationLink( destination: BoardgameDetail(boardgame: boardgame) ) {
+                        BoardgameRow(boardgame: boardgame)
+                    }
                 }
             }
         }
@@ -24,8 +37,4 @@ struct BoardgameList: View {
     }
 }
 
-struct BoardgameList_Previews: PreviewProvider {
-    static var previews: some View {
-        BoardgameList()
-    }
-}
+

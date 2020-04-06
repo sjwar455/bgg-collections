@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct BoardgameRow: View {
-     @EnvironmentObject private var userData: UserData
     var boardgame : Boardgame
     
     var body: some View {

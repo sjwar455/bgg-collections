@@ -9,5 +9,11 @@ import Combine
 import SwiftUI
 
 final class UserData: ObservableObject {
-    @Published var collection = boardgameCollection
+    @Published var collection: BoardgameCollection
+    
+    init(userid: String) {
+        self.collection = BoardgameCollection(userid: userid)
+    }
 }
+
+

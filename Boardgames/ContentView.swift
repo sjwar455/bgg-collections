@@ -11,11 +11,10 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @EnvironmentObject var userData: UserData
 
     var body: some View {
         NavigationView{
-            NavigationLink(destination: BoardgameList()) {
+            NavigationLink(destination: BoardgameList().environmentObject(UserData(userid: "seismicHBDPT"))) {
                 Text("view boardgame collection ")
             }
         }

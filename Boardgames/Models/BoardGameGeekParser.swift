@@ -31,7 +31,7 @@ class BoardgameXMLParser : NSObject, XMLParserDelegate {
     switch elementName {
     
     case "item":
-        boardgame.bggid = attributeDict["id"]!
+        boardgame.id = Int(attributeDict["id"]!)!
         
     case "name":
         if attributeDict["type"] == "primary" {

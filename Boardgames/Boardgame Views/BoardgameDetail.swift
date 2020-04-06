@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct BoardgameDetail: View {
-     @EnvironmentObject private var userData: UserData
     var boardgame: Boardgame
     
     @State private var showDescription: Bool = false
