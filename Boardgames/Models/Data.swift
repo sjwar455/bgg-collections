@@ -18,11 +18,9 @@ func getCollection(userid: String) -> [Boardgame] {
     print("========================================================")
     var collection: [Boardgame] = []
     
-    
     let urlString = collectionRootURL.replacingOccurrences(of: collection_userid, with: userid)
     let url = URL(string: urlString)!
     let parser = XMLParser(contentsOf: url)!
-    
 
     let collectionParser = CollectionXMLParser()
     
@@ -42,7 +40,7 @@ func getCollection(userid: String) -> [Boardgame] {
     print("boardgame ids:")
     print("========================================================")
     
-        print(collectionParser.boardgameIDs)
+    print(collectionParser.boardgameIDs)
     
     for boardgameID in collectionParser.boardgameIDs {
         collection.append(getBoardgame(id: boardgameID))

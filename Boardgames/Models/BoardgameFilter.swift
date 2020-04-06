@@ -25,7 +25,6 @@ struct BoardgameFilter {
               && self.checkMinAge(minAge: Int(boardgame.minAge)!)
               && self.checkForCommonTraits(boardgameTraits: boardgame.categories, filterTraits: self.categories, mustContainAll: self.mustContainAllCategories)
               && self.checkForCommonTraits(boardgameTraits: boardgame.mechanics, filterTraits: self.mechanics, mustContainAll: self.mustContainAllMechanics)
-    
     }
     
     func checkNumPlayers(minPlayers: Int, maxPlayers: Int) -> Bool {
@@ -37,22 +36,19 @@ struct BoardgameFilter {
     }
     
     func checkForCommonTraits(boardgameTraits: [String], filterTraits: [String], mustContainAll: Bool) -> Bool {
-        var result: Bool = false
-        
-        
+
         let traitSet = Set(boardgameTraits)
         let traitIntersect = traitSet.intersection(filterTraits)
         
         if !traitIntersect.isEmpty || filterTraits.isEmpty {
             
             if !mustContainAll || traitIntersect.count == filterTraits.count {
-                result = true
+                return true
             }
   
         }
         
-        
-        return result
+        return false
     }
     
 
