@@ -13,6 +13,8 @@
 		878712992399C6EF00620BC1 /* BoardgameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878712982399C6EF00620BC1 /* BoardgameFilter.swift */; };
 		8787129B2399E06600620BC1 /* BoardgameListFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8787129A2399E06500620BC1 /* BoardgameListFilter.swift */; };
 		87B13C86243D3136007E5585 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87B13C85243D3136007E5585 /* GoogleService-Info.plist */; };
+		87B13C88243D335D007E5585 /* CaptureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B13C87243D335D007E5585 /* CaptureImageView.swift */; };
+		87B13C8A243D3383007E5585 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B13C89243D3383007E5585 /* Coordinator.swift */; };
 		87B5D428239EE74300DBA8CB /* MultiSelectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */; };
 		87B5D42A239EE79F00DBA8CB /* MultiSelectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */; };
 		87B5D42C239F3D4700DBA8CB /* BoardgameCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */; };
@@ -37,6 +39,8 @@
 		878712982399C6EF00620BC1 /* BoardgameFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameFilter.swift; sourceTree = "<group>"; };
 		8787129A2399E06500620BC1 /* BoardgameListFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameListFilter.swift; sourceTree = "<group>"; };
 		87B13C85243D3136007E5585 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87B13C87243D335D007E5585 /* CaptureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureImageView.swift; sourceTree = "<group>"; };
+		87B13C89243D3383007E5585 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectRow.swift; sourceTree = "<group>"; };
 		87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectList.swift; sourceTree = "<group>"; };
 		87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameCollection.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			children = (
 				87862619238DF4DA00D7ADDF /* UserData.swift */,
 				87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */,
+				87B13C89243D3383007E5585 /* Coordinator.swift */,
 				87862617238DF09D00D7ADDF /* Boardgame.swift */,
 				878712982399C6EF00620BC1 /* BoardgameFilter.swift */,
 				87BC1332238CE93D00896AD6 /* Data.swift */,
@@ -160,6 +165,7 @@
 			children = (
 				87C6E40C23932DCF0086AFC5 /* ImageView.swift */,
 				87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */,
+				87B13C87243D335D007E5585 /* CaptureImageView.swift */,
 				87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */,
 			);
 			path = "Supporting Views";
@@ -299,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B13C88243D335D007E5585 /* CaptureImageView.swift in Sources */,
 				87BC1333238CE93D00896AD6 /* Data.swift in Sources */,
 				8786261A238DF4DA00D7ADDF /* UserData.swift in Sources */,
 				87B5D42C239F3D4700DBA8CB /* BoardgameCollection.swift in Sources */,
@@ -306,6 +313,7 @@
 				87862618238DF09D00D7ADDF /* Boardgame.swift in Sources */,
 				87B5D428239EE74300DBA8CB /* MultiSelectRow.swift in Sources */,
 				87BEB207238B39EC009A59EE /* AppDelegate.swift in Sources */,
+				87B13C8A243D3383007E5585 /* Coordinator.swift in Sources */,
 				87B5D42A239EE79F00DBA8CB /* MultiSelectList.swift in Sources */,
 				8787129B2399E06600620BC1 /* BoardgameListFilter.swift in Sources */,
 				87BEB209238B39EC009A59EE /* SceneDelegate.swift in Sources */,
