@@ -13,11 +13,12 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-        NavigationView{
-            NavigationLink(destination: BoardgameList().environmentObject(UserData(userid: "seismicHBDPT"))) {
-                Text("view boardgame collection ")
-            }
-        }
+        Text("Testing Firbase config")
+//        NavigationView{
+//            NavigationLink(destination: BoardgameList().environmentObject(UserData(userid: "seismicHBDPT"))) {
+//                Text("view boardgame collection ")
+//            }
+//        }
     }
 }
 

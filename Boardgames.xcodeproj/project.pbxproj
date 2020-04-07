@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503C7B42EEC1F5667D9772CD /* Pods_Boardgames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F5DE190591274CEB12C758 /* Pods_Boardgames.framework */; };
 		87862618238DF09D00D7ADDF /* Boardgame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87862617238DF09D00D7ADDF /* Boardgame.swift */; };
 		8786261A238DF4DA00D7ADDF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87862619238DF4DA00D7ADDF /* UserData.swift */; };
 		878712992399C6EF00620BC1 /* BoardgameFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878712982399C6EF00620BC1 /* BoardgameFilter.swift */; };
 		8787129B2399E06600620BC1 /* BoardgameListFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8787129A2399E06500620BC1 /* BoardgameListFilter.swift */; };
+		87B13C86243D3136007E5585 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87B13C85243D3136007E5585 /* GoogleService-Info.plist */; };
 		87B5D428239EE74300DBA8CB /* MultiSelectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */; };
 		87B5D42A239EE79F00DBA8CB /* MultiSelectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */; };
 		87B5D42C239F3D4700DBA8CB /* BoardgameCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */; };
@@ -29,10 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		601EC22E29AFB495FF0CA57D /* Pods-Boardgames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boardgames.release.xcconfig"; path = "Target Support Files/Pods-Boardgames/Pods-Boardgames.release.xcconfig"; sourceTree = "<group>"; };
 		87862617238DF09D00D7ADDF /* Boardgame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Boardgame.swift; path = ../Boardgame.swift; sourceTree = "<group>"; };
 		87862619238DF4DA00D7ADDF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		878712982399C6EF00620BC1 /* BoardgameFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameFilter.swift; sourceTree = "<group>"; };
 		8787129A2399E06500620BC1 /* BoardgameListFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameListFilter.swift; sourceTree = "<group>"; };
+		87B13C85243D3136007E5585 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87B5D427239EE74300DBA8CB /* MultiSelectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectRow.swift; sourceTree = "<group>"; };
 		87B5D429239EE79F00DBA8CB /* MultiSelectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectList.swift; sourceTree = "<group>"; };
 		87B5D42B239F3D4700DBA8CB /* BoardgameCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameCollection.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		87EEC2A2239398E300D71B21 /* BoardGameGeekParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameGeekParser.swift; sourceTree = "<group>"; };
 		87EEC2A72393A37C00D71B21 /* BoardgameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameRow.swift; sourceTree = "<group>"; };
 		87EEC2AB2393A4E500D71B21 /* BoardgameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardgameList.swift; sourceTree = "<group>"; };
+		BEB26ACEAAAD2BCE2027FF70 /* Pods-Boardgames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boardgames.debug.xcconfig"; path = "Target Support Files/Pods-Boardgames/Pods-Boardgames.debug.xcconfig"; sourceTree = "<group>"; };
+		C1F5DE190591274CEB12C758 /* Pods_Boardgames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boardgames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +63,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503C7B42EEC1F5667D9772CD /* Pods_Boardgames.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FD22B77F20801E1E6C58C0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEB26ACEAAAD2BCE2027FF70 /* Pods-Boardgames.debug.xcconfig */,
+				601EC22E29AFB495FF0CA57D /* Pods-Boardgames.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		80642547098EA3D64B8179F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1F5DE190591274CEB12C758 /* Pods_Boardgames.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		87BEB1FA238B39EC009A59EE = {
 			isa = PBXGroup;
 			children = (
 				87BEB205238B39EC009A59EE /* Boardgames */,
 				87BEB204238B39EC009A59EE /* Products */,
+				3FD22B77F20801E1E6C58C0D /* Pods */,
+				80642547098EA3D64B8179F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +117,7 @@
 				87BEB20C238B39F0009A59EE /* Assets.xcassets */,
 				87BEB211238B39F0009A59EE /* LaunchScreen.storyboard */,
 				87BEB214238B39F0009A59EE /* Info.plist */,
+				87B13C85243D3136007E5585 /* GoogleService-Info.plist */,
 				87BEB20E238B39F0009A59EE /* Preview Content */,
 			);
 			path = Boardgames;
@@ -145,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87BEB217238B39F0009A59EE /* Build configuration list for PBXNativeTarget "Boardgames" */;
 			buildPhases = (
+				4B3A27B945D4D9A8E582A61B /* [CP] Check Pods Manifest.lock */,
 				87BEB1FF238B39EC009A59EE /* Sources */,
 				87BEB200238B39EC009A59EE /* Frameworks */,
 				87BEB201238B39EC009A59EE /* Resources */,
+				8CF42ED5932C72D2F2BEBB23 /* [CP] Embed Pods Frameworks */,
+				0EE38122156C5628B22A71D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,12 +227,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				87BEB213238B39F0009A59EE /* LaunchScreen.storyboard in Resources */,
+				87B13C86243D3136007E5585 /* GoogleService-Info.plist in Resources */,
 				87BEB210238B39F0009A59EE /* Preview Assets.xcassets in Resources */,
 				87BEB20D238B39F0009A59EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EE38122156C5628B22A71D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Boardgames/Pods-Boardgames-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Boardgames/Pods-Boardgames-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boardgames/Pods-Boardgames-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B3A27B945D4D9A8E582A61B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Boardgames-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CF42ED5932C72D2F2BEBB23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Boardgames/Pods-Boardgames-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Boardgames/Pods-Boardgames-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boardgames/Pods-Boardgames-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87BEB1FF238B39EC009A59EE /* Sources */ = {
@@ -358,6 +448,7 @@
 		};
 		87BEB218238B39F0009A59EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB26ACEAAAD2BCE2027FF70 /* Pods-Boardgames.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +469,7 @@
 		};
 		87BEB219238B39F0009A59EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 601EC22E29AFB495FF0CA57D /* Pods-Boardgames.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
