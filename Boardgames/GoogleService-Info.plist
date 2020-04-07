@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>451519885012-euj7r327mmv44c02qrqafvq9ma1mf56o.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.451519885012-euj7r327mmv44c02qrqafvq9ma1mf56o</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBCb__2k4mIeoa8Nr4f9SUC9geJHsT0akA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>451519885012</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.Boardgames</string>
+	<key>PROJECT_ID</key>
+	<string>boardgamescanner</string>
+	<key>STORAGE_BUCKET</key>
+	<string>boardgamescanner.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:451519885012:ios:950ba2ec9c6d2428cc1541</string>
+	<key>DATABASE_URL</key>
+	<string>https://boardgamescanner.firebaseio.com</string>
+</dict>
+</plist>
